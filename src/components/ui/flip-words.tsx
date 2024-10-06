@@ -38,7 +38,7 @@ export const FlipWords = ({
       <motion.div
         initial={{
           opacity: 0,
-          y: 10,
+          y: 5, // Lower vertical shift
         }}
         animate={{
           opacity: 1,
@@ -47,14 +47,14 @@ export const FlipWords = ({
         transition={{
           type: "spring",
           stiffness: 100,
-          damping: 10,
+          damping: 12, // Adjusted to smooth out animation
         }}
         exit={{
           opacity: 0,
-          y: -40,
-          x: 40,
-          filter: "blur(8px)",
-          scale: 2,
+          y: -20, // Less vertical movement
+          x: 20,
+          filter: "blur(4px)",
+          scale: 1.5,
           position: "absolute",
         }}
         className={cn(
@@ -63,11 +63,10 @@ export const FlipWords = ({
         )}
         key={currentWord}
       >
-        {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
         {currentWord.split(" ").map((word, wordIndex) => (
           <motion.span
             key={word + wordIndex}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+            initial={{ opacity: 0, y: 5, filter: "blur(4px)" }} // Lower shift and blur
             animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             transition={{
               delay: wordIndex * 0.3,
@@ -78,7 +77,7 @@ export const FlipWords = ({
             {word.split("").map((letter, letterIndex) => (
               <motion.span
                 key={word + letterIndex}
-                initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+                initial={{ opacity: 0, y: 5, filter: "blur(4px)" }} // Lower shift
                 animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
                 transition={{
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
@@ -93,6 +92,7 @@ export const FlipWords = ({
           </motion.span>
         ))}
       </motion.div>
+
     </AnimatePresence>
   );
 };

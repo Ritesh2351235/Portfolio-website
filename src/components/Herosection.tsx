@@ -1,7 +1,6 @@
 import React from "react";
 import { FlipWordsDemo } from "./Header";
 import Button from "./Button";
-import { ThreeDCardDemo } from "./Card";
 import { ExpandableCardDemo } from "./Projects";
 export default function Herosection() {
 

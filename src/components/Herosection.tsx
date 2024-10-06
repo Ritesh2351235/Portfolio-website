@@ -2,6 +2,8 @@ import React from "react";
 import { FlipWordsDemo } from "./Header";
 import Button from "./Button";
 import { ExpandableCardDemo } from "./Projects";
+import { Githubicon, Instagramicon, LinkedInicon } from "./Newbutton";
+
 
 export default function Herosection() {
   return (
@@ -12,16 +14,17 @@ export default function Herosection() {
       </div>
 
       {/* Button section, ensure proper alignment and no extra margin */}
-      <div className="flex justify-center items-center mt-5 space-x-4">
-        <div className="p-2 text-slate-300 font-extralight">
-          <Button title="@instagram" url="https://www.instagram.com/_riteshhiremath/" />
+      <div className="flex justify-center items-center mt-6 mb-5 space-x-4">
+        <div>
+          <Githubicon></Githubicon>
         </div>
-        <div className="p-2">
-          <Button title="@github" url="https://github.com/Ritesh2351235" />
+        <div>
+          <LinkedInicon></LinkedInicon>
         </div>
-        <div className="p-2">
-          <Button title="@linkedIn" url="https://www.linkedin.com/in/ritesh-hiremath-692904222/" />
+        <div>
+          <Instagramicon></Instagramicon>
         </div>
+
       </div>
 
       {/* Expandable card section */}

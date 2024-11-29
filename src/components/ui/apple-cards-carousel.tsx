@@ -203,7 +203,7 @@ export const Card = ({
     <>
       <AnimatePresence>
         {open && (
-          <div className="fixed inset-0 h-screen z-50 overflow-auto">
+          <div className="fixed inset-0 h-screen z-50 overflow-auto data-scroll-section data-scroll-prevent-scroll">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
